@@ -1,4 +1,4 @@
-from pages.Base import BasePageObject
+from pages.base import BasePageObject
 from selenium.webdriver.common.by import By
 
 
@@ -17,7 +17,7 @@ class LoginPage(BasePageObject):
         self.click(self.enter_button)
 
 
-class SelectingTheOriginalDirectory(BasePageObject):
+class CatalogPage(BasePageObject):
     tree_strips = (By.ID, 'overlay-menu')
     original_catalog = (By.XPATH, "//a[text()='Оригинальный каталог']")
 
@@ -37,7 +37,7 @@ class SearchAuto(BasePageObject):
         self.click(self.search_button)
 
 
-class OutputComparison(BasePageObject):
+class ListNodes(BasePageObject):
     header_text = (By.XPATH, "//p[@class='notice-text']")
 
     def get_header_text(self):
